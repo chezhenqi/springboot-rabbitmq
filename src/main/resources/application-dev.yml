@@ -1,0 +1,25 @@
+server:
+  port: 8089
+spring:
+  #rabbitmq配置信息
+  rabbitmq:
+    host: 192.168.183.130
+    port: 5672
+    username: admin
+    password: admin
+###############自定义properties配置信息###############
+properties:
+  #rabbitMQ消息队列
+  queue:
+    insure:
+      add: insureadd
+      update: insureupdate
+      del: insuredel
+    money:
+      add: moneyadd
+      update: moneyupdate
+      del: moneydel
+    financing:
+      add: financingadd
+      update: financingupdate
+      del: financingdel
