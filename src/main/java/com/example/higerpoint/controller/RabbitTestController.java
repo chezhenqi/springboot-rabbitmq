@@ -1,8 +1,8 @@
 package com.example.higerpoint.controller;
 
-import com.example.higerpoint.producer.FinancingProducer;
-import com.example.higerpoint.producer.InsureProducer;
-import com.example.higerpoint.producer.MoneyProducer;
+import com.example.higerpoint.rabbitmq.producer.FinancingProducer;
+import com.example.higerpoint.rabbitmq.producer.InsureProducer;
+import com.example.higerpoint.rabbitmq.producer.MoneyProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

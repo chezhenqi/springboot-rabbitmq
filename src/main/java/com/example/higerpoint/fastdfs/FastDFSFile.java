@@ -1,4 +1,4 @@
-package com.example.higerpoint.client;
+package com.example.higerpoint.fastdfs;
 /**
  * @author chezhenqi
  * @date 16:19 2019/12/26

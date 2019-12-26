@@ -1,6 +1,5 @@
-package com.example.higerpoint.client;
+package com.example.higerpoint.fastdfs;
 
-import com.example.higerpoint.config.FastDFSConfig;
 import lombok.Cleanup;
 import org.csource.common.MyException;
 import org.csource.common.NameValuePair;

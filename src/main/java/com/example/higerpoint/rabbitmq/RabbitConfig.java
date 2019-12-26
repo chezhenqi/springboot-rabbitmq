@@ -1,4 +1,4 @@
-package com.example.higerpoint.config;
+package com.example.higerpoint.rabbitmq;
 
 import lombok.Data;
 import org.springframework.amqp.core.Binding;

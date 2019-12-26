@@ -1,6 +1,6 @@
-package com.example.higerpoint.producer;
+package com.example.higerpoint.rabbitmq.producer;
 
-import com.example.higerpoint.config.RabbitConfig;
+import com.example.higerpoint.rabbitmq.RabbitConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

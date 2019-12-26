@@ -1,7 +1,7 @@
-package com.example.higerpoint.controller.file;
+package com.example.higerpoint.controller;
 
-import com.example.higerpoint.client.FastDFSClient;
-import com.example.higerpoint.config.FastDFSConfig;
+import com.example.higerpoint.fastdfs.FastDFSClient;
+import com.example.higerpoint.fastdfs.FastDFSConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +21,9 @@ import java.util.Map;
  * @return:
  */
 @Controller
-@RequestMapping("/file")
-public class FileController {
-    private final static Logger logger = (Logger) LoggerFactory.getLogger(FileController.class);
+@RequestMapping("/fastDFS")
+public class FastDFSController {
+    private final static Logger logger = (Logger) LoggerFactory.getLogger(FastDFSController.class);
     @Autowired
     private FastDFSConfig fastDFSConfig;
     /**

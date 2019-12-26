@@ -1,4 +1,4 @@
-package com.example.higerpoint.config;
+package com.example.higerpoint.fastdfs;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

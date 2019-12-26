@@ -1,4 +1,4 @@
-package com.example.higerpoint.consumer;
+package com.example.higerpoint.rabbitmq.consumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
