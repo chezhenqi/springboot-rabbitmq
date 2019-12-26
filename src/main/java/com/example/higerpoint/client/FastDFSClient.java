@@ -212,7 +212,7 @@ public class FastDFSClient {
          * 关闭流，删除临时文件
          */
         inputStream.close();
-        boolean boo = convert.delete();
+        convert.delete();
         return flag;
     }
 
