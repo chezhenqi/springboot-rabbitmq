@@ -7,6 +7,13 @@ spring:
     port: 5672
     username: admin
     password: admin
+#fastdfs配置
+fastdfs:
+  connect_timeout_in_seconds: 60
+  network_timeout_in_seconds: 60
+  http_tracker_http_port: 8888
+  tracker_servers: 192.168.183.130:22122
+  tracker_server_host: http://192.168.183.130:8888
 ###############自定义properties配置信息###############
 properties:
   #rabbitMQ消息队列
