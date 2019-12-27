@@ -13,6 +13,15 @@ spring:
     port: 5672
     username: admin
     password: admin
+  #mongoDB配置信息
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@192.168.183.130:27017/admin
+      username: admin
+      password: admin
+      database: admin
+      port: 27017
+      host: 192.168.183.130
 #fastdfs配置
 fastdfs:
   connect_timeout_in_seconds: 60

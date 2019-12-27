@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -251,6 +252,31 @@ public class HttpUtil {
             postMethod.releaseConnection();
         }
         return content;
+    }
+
+    /**
+     * 获取登录用户IP地址
+     *
+     * @param request
+     * @return
+     */
+    public static String getIpAddr(HttpServletRequest request) {
+        String ip = request.getHeader("x-forwarded-for");
+        String unknownStr = "unknown";
+        String localStr = "0:0:0:0:0:0:0:1";
+        if (ip == null || ip.length() == 0 || unknownStr.equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || unknownStr.equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || unknownStr.equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        if (localStr.equals(ip)) {
+            ip = "local";
+        }
+        return ip;
     }
 
 //	public static void main(String[] args) {
