@@ -11,6 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>springboot-rabbitmq</artifactId>
     <version>1.0.0</version>
+    <!--选择打包类型-->
+    <!--<packaging>war</packaging>-->
     <name>springboot-rabbitmq</name>
     <description>Demo project for Spring Boot</description>
 
