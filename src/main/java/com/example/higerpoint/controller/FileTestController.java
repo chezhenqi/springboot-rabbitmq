@@ -12,13 +12,13 @@ import java.util.ArrayList;
 public class FileTestController {
     private static ArrayList<String> listname = new ArrayList<String>();
 
-    public static void main(String[] args) throws Exception {
-        /**
+    /*public static void main(String[] args) throws Exception {
+        *//**
          * 递归读取文件
-         */
+         *//*
         readAllFile("data/");
         System.out.println(listname.size());
-    }
+    }*/
 
     /**
      * @author chezhenqi
