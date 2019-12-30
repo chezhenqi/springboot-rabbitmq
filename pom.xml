@@ -188,6 +188,25 @@
             <version>0.4.8</version>
         </dependency>
         <!--ali OSS-end-->
+
+        <!--elasticsearch-start-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <!--elasticsearch-end-->
+
+        <!--test-start-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <!--test-end-->
     </dependencies>
 
 </project>
