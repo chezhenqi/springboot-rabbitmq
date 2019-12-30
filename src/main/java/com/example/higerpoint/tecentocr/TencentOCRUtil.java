@@ -1,7 +1,9 @@
-package com.example.higerpoint.util;
+package com.example.higerpoint.tecentocr;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.example.higerpoint.util.HttpUtil;
+import com.example.higerpoint.util.MD5;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -251,7 +253,7 @@ public class TencentOCRUtil {
             }
         }
         byte[] encode = Base64.getEncoder().encode(data);
-        if(encode.length>0x640000){
+        if (encode.length > 0x640000) {
             return "";
         }
         return new String(encode);
@@ -323,11 +325,11 @@ public class TencentOCRUtil {
         if (cardType == 0) { //正面
             String data = JSONObject.parseObject(result).get("data").toString();
             JSONObject dataObject = JSONObject.parseObject(data);
-            ocrInfo = (Map)dataObject;
+            ocrInfo = (Map) dataObject;
         } else if (cardType == 1) { //反面
             String data = JSONObject.parseObject(result).get("data").toString();
             JSONObject dataObject = JSONObject.parseObject(data);
-            ocrInfo = (Map)dataObject;
+            ocrInfo = (Map) dataObject;
         }
         return ocrInfo;
     }
@@ -440,27 +442,27 @@ public class TencentOCRUtil {
         return ocrInfo;
     }
 
-//    public static void main(String[] args) {
-//        /**
-//         * 1、识别身份证正面或者反面--》0:front;1:back
-//         * 2、识别驾驶证/行驶证--》0:行驶证;1驾驶证:
-//         */
-//        Integer code = 0;//
-//        TencentOCRUtil tencentOCRUtil = new TencentOCRUtil();
-//        String imgPath = "C:/Users/xuewanli/Pictures/证件照/front.jpg";//身份证正面
-//        imgPath = "C:/Users/xuewanli/Pictures/证件照/front.jpg";//身份证反面
+    /*public static void main(String[] args) {
+        *//**
+         * 1、识别身份证正面或者反面--》0:front;1:back
+         * 2、识别驾驶证/行驶证--》0:行驶证;1驾驶证:
+         *//*
+        Integer code = 0;//
+        TencentOCRUtil tencentOCRUtil = new TencentOCRUtil();
+        String imgPath = "C:/Users/xuewanli/Pictures/证件照/front.jpg";//身份证正面
+//        imgPath = "C:/Users/xuewanli/Pictures/证件照/back.jpg";//身份证反面
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/yyzz.jpg";//营业执照
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/驾驶证.jpg";//驾驶证
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/行驶证.jpg";//行驶证
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/银行卡.jpg";//行驶证
-//
+
 //        String result = tencentOCRUtil.getOCRLicence(imgPath, null);//识别营业执照
-//        result = tencentOCRUtil.getOCRIDCard(imgPath, code, null);//识别身份证
-//        result = tencentOCRUtil.getOCRDriverLicense(imgPath, code, null);//识别行驶证/驾驶证
+        String result = tencentOCRUtil.getOCRIDCard(imgPath, code, null);//识别身份证
+//        String result = tencentOCRUtil.getOCRDriverLicense(imgPath, code, null);//识别行驶证/驾驶证
 //        Map map = tencentOCRUtil.getLicenceInfo(result);//获取营业执照信息
-//        map = tencentOCRUtil.getIDCardInfo(result, code);//获取身份证信息
-//        map = tencentOCRUtil.getDriverLicenceInfo(result);//获取行驶证/驾驶证信息
-//        map = tencentOCRUtil.getCreditCardInfo(result);//获取银行卡信息
-//        log.info("图片识别结果为--》" + JsonUtil.object2json(map));
-//    }
+        Map map = tencentOCRUtil.getIDCardInfo(result, code);//获取身份证信息
+//        Map map = tencentOCRUtil.getDriverLicenceInfo(result);//获取行驶证/驾驶证信息
+//        Map map = tencentOCRUtil.getCreditCardInfo(result);//获取银行卡信息
+        log.info("图片识别结果为--》" + JsonUtil.object2json(map));
+    }*/
 }
