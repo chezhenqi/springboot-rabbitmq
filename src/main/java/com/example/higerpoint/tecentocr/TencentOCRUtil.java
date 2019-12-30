@@ -3,6 +3,7 @@ package com.example.higerpoint.tecentocr;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.higerpoint.util.HttpUtil;
+import com.example.higerpoint.util.JsonUtil;
 import com.example.higerpoint.util.MD5;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -453,15 +454,15 @@ public class TencentOCRUtil {
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/back.jpg";//身份证反面
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/yyzz.jpg";//营业执照
 //        imgPath = "C:/Users/xuewanli/Pictures/证件照/驾驶证.jpg";//驾驶证
-//        imgPath = "C:/Users/xuewanli/Pictures/证件照/行驶证.jpg";//行驶证
-//        imgPath = "C:/Users/xuewanli/Pictures/证件照/银行卡.jpg";//行驶证
+        imgPath = "C:/Users/xuewanli/Pictures/证件照/行驶证.jpg";//行驶证
+//        imgPath = "C:/Users/xuewanli/Pictures/证件照/银行卡.jpg";//银行卡
 
 //        String result = tencentOCRUtil.getOCRLicence(imgPath, null);//识别营业执照
-        String result = tencentOCRUtil.getOCRIDCard(imgPath, code, null);//识别身份证
-//        String result = tencentOCRUtil.getOCRDriverLicense(imgPath, code, null);//识别行驶证/驾驶证
+//        String result = tencentOCRUtil.getOCRIDCard(imgPath, code, null);//识别身份证
+        String result = tencentOCRUtil.getOCRDriverLicense(imgPath, code, null);//识别行驶证/驾驶证
 //        Map map = tencentOCRUtil.getLicenceInfo(result);//获取营业执照信息
-        Map map = tencentOCRUtil.getIDCardInfo(result, code);//获取身份证信息
-//        Map map = tencentOCRUtil.getDriverLicenceInfo(result);//获取行驶证/驾驶证信息
+//        Map map = tencentOCRUtil.getIDCardInfo(result, code);//获取身份证信息
+        Map map = tencentOCRUtil.getDriverLicenceInfo(result);//获取行驶证/驾驶证信息
 //        Map map = tencentOCRUtil.getCreditCardInfo(result);//获取银行卡信息
         log.info("图片识别结果为--》" + JsonUtil.object2json(map));
     }*/
