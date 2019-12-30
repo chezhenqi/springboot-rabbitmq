@@ -49,6 +49,10 @@ properties:
       add: financingadd
       update: financingupdate
       del: financingdel
+    item:
+      add: itemadd
+      update: itemupdate
+      del: itemdel
 logging:
   level:
     root: INFO

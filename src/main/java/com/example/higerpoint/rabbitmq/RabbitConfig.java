@@ -55,6 +55,12 @@ public class RabbitConfig {
     private String queueFinancingUpdate;
     @Value("${properties.queue.financing.del}")
     private String queueFinancingDel;
+    @Value("${properties.queue.item.add}")
+    private String queueItemAdd;
+    @Value("${properties.queue.item.update}")
+    private String queueItemUpdate;
+    @Value("${properties.queue.item.del}")
+    private String queueItemDel;
 
     /**
      * 交换空间名称
@@ -147,6 +153,21 @@ public class RabbitConfig {
         return BindingBuilder.bind(queueFinancingDel()).to(exchange()).with(ROUTINGKEY);
     }
 
+    @Bean
+    public Binding bindingQueueItemAdd() {
+        return BindingBuilder.bind(queueItemAdd()).to(exchange()).with(ROUTINGKEY);
+    }
+
+    @Bean
+    public Binding bindingQueueItemUpdate() {
+        return BindingBuilder.bind(queueItemUpdate()).to(exchange()).with(ROUTINGKEY);
+    }
+
+    @Bean
+    public Binding bindingQueueItemDel() {
+        return BindingBuilder.bind(queueItemDel()).to(exchange()).with(ROUTINGKEY);
+    }
+
 
     /**
      * 将需要创建的消息队列实例化
@@ -194,6 +215,21 @@ public class RabbitConfig {
     @Bean
     public Queue queueFinancingDel() {
         return new Queue(queueFinancingDel, true);
+    }
+
+    @Bean
+    public Queue queueItemAdd() {
+        return new Queue(queueItemAdd, true);
+    }
+
+    @Bean
+    public Queue queueItemUpdate() {
+        return new Queue(queueItemUpdate, true);
+    }
+
+    @Bean
+    public Queue queueItemDel() {
+        return new Queue(queueItemDel, true);
     }
 
 }
